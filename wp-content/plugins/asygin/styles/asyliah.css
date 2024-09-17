@@ -57,7 +57,10 @@ h1{
     justify-content: center;
     transition: background-color 0.3s, transform 0.3s; 
 }   
-
+.submit-button:hover {
+    background-color: #2980b9; 
+    transform: scale(1.05); 
+}
 
 #box1 {
     background-color: #e74c3c;
