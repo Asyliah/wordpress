@@ -1,4 +1,4 @@
-<?php get_header(); ?>
+<!-- <?php get_header(); ?>
 
 <h1>Bienvenue sur CursorSwitch !</h1>
 
@@ -21,4 +21,4 @@
 </form>
 
 
-<?php get_footer(); ?>
+<?php get_footer(); ?> -->

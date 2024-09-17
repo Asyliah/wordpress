@@ -1,31 +1,26 @@
-alert("Test");
 document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('myForm');
+    const cursorDropdown = document.getElementById('cursorDropdown');
     
-    if (form) {
-        form.addEventListener('submit', function(event) {
-            event.preventDefault(); 
-            
-           
-            const activeButton = document.activeElement;
-            
-            
+    // Vérifie si le dropdown existe avant d'ajouter l'écouteur d'événements
+    if (cursorDropdown) {
+        cursorDropdown.addEventListener('change', function() {
             let cursorUrl = '';
-            switch (activeButton.id) {
-                case 'button1':
-                    cursorUrl = '../images/amongustwerk.cur'; 
+            switch (this.value) {
+                case 'cursor1':
+                    cursorUrl = '../images/amongustwerk.cur';
                     break;
-                case 'button2':
-                    cursorUrl = '../images/jotaro.cur'; 
+                case 'cursor2':
+                    cursorUrl = '../images/jotaro.cur';
                     break;
-                case 'button3':
-                    cursorUrl = '../images/drag.cur'; 
+                case 'cursor3':
+                    cursorUrl = '../images/drag.cur';
                     break;
-            }           
-            // Appliquer le curseur
+            }
+            
+            // Appliquer le curseur s'il est défini
             if (cursorUrl) {
-                document.body.style.cursor = `url(${cursorUrl}), auto`;
-                alert('clique valable');
+                document.body.className = `url(${cursorUrl}), auto`;
+                alert('Curseur changé !');
             }
         });
     }
