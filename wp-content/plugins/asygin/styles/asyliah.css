@@ -1,0 +1,75 @@
+body {
+    background-color: rgb(206, 206, 206);
+    /* cursor: crosshair; */
+
+}
+
+h1{
+    text-align: center;
+    font-size:  60px;
+}
+
+
+.plugin-text {
+    color: #ff6600;
+    font-size: 50px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    gap: 50px; 
+}
+
+.box {
+    width: 60%; 
+    height: 200px; 
+    display: flex;
+    align-items: center;
+    background-color: #3498db; 
+    color: white; 
+    font-size: 18px; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    padding: 10px; 
+    box-sizing: border-box; 
+}
+.image {
+     width: 30%; 
+     height: 30%px;
+    object-fit: cover; 
+    margin-right: 10px; 
+}
+
+
+.submit-button {
+    width: 150px; 
+    height: 50px; 
+    background-color: #3498db;
+    color: white; 
+    font-size: 18px; 
+    border: none; 
+    border-radius: 8px; 
+    cursor: pointer; 
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    transition: background-color 0.3s, transform 0.3s; 
+}   
+
+
+#box1 {
+    background-color: #e74c3c;
+    cursor: url('../images/amongustwerk.cur'), auto;
+}
+
+#box2 {
+    background-color: #2ecc71;
+    cursor: url('../images/jotaro.cur'), auto;
+}
+
+#box3 {
+    background-color: #f39c12;
+    cursor: url('../images/drag.cur'), auto;
+}
