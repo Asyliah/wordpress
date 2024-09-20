@@ -1,21 +1,23 @@
-Bienvenue sur le plugin qui permet de changer de curseur ! 
+# CursorSwitch
+
+## Bienvenue sur le plugin qui permet de changer de curseur ! 
 Grâce à ce plugin, vous aurez la possiblité de modifier votre curseur à volonter parmi le choix qu'il y a dans la liste !
 
-Pour le télécharger depuis GitHub :
+# Pour le télécharger depuis GitHub :
     -wp-content/plugins
     -asygin.zip
 
 
-Pour l'installer sur Wordpress : 
+# Pour l'installer sur Wordpress : 
     -Onglet extension
     -Ajouter une extension ( tout en haut à gauche )
     -Téléverser une extension
     -Drag & Drop le asygin.zip dedans
 
-Pour l'activer :
+# Pour l'activer :
     Simplement cliquer sur activer.
 
-Maintenant il faut tester.
+# Maintenant il faut tester.
     -Rendez-vous sur un thème quelconque.
     -En haut à droite, un menu burger apparaitra
     -Cliquez dessus, le menu s'ouvrira avec la liste des curseurs disponibles.
