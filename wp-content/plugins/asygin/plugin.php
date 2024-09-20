@@ -33,18 +33,6 @@ function cursorMenu() {
 }
 add_action('admin_menu', 'cursorMenu');
 
-// function asyginHtml() {
-//     wp_register_script(
-//         'asy-html',  
-//         plugins_url( 'html/menu.php', __FILE__),   
-//     );
-
-//     wp_enqueue_script('asy-html');
-// }
-
-// add_action('wp_enqueue_scripts', 'asyginHtml');
-
-
 function asygin_enqueue_assets() {
     if ( ! is_admin() ) {
         wp_register_style(
@@ -64,10 +52,6 @@ function asygin_enqueue_assets() {
     }
 }
 add_action( 'wp_enqueue_scripts', 'asygin_enqueue_assets' );
-
-// function getMenuRender() 
-// {
-//    
 
 function asygin_menu_render() {
     ?>
