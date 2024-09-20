@@ -1,3 +1,5 @@
+![Compatibilité WordPress](https://img.shields.io/badge/WordPress-5.8%2B-blue)
+
 # CursorSwitch
 
 ## Bienvenue sur le plugin qui permet de changer de curseur ! 
