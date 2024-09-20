@@ -11,9 +11,6 @@ Author: Moi-même
 Version: 1.7.2
 Author URI: http://ma.tt/
 */
-include(plugin_dir_path(__FILE__) . 'scripts/ascrypt.php');
-include(plugin_dir_path(__FILE__) . 'styles/asyliah.php');
-
 function cursor_settings_page() {
     ?>
     <div class="wrap">
@@ -25,40 +22,56 @@ function cursor_settings_page() {
 
 function cursorMenu() {
     add_menu_page(
-        'Paramètrage',                // 1. Le titre qui apparaîtra dans l'onglet du navigateur
-        'Cursor Plugin',              // 2. Le nom qui apparaîtra dans le menu admin WordPress
-        'manage_options',             // 3. La capacité requise pour voir et accéder à cette page (ici "manage_options" signifie que seuls les administrateurs peuvent accéder)
-        'cursor_settings',             // 4. Le slug (identifiant unique) de la page d'options
-        'cursor_settings_page',         // 5. La fonction de rappel qui affiche le contenu de la page
-        'dashicons-admin-generic',      // 6. L'icône Dashicons à afficher dans le menu admin
-        30                              // 7. (Facultatif) La position relative dans le menu admin (ici, position 30)
+        'Paramètrage',                
+        'Cursor Plugin',              
+        'manage_options',             
+        'cursor_settings',             
+        'cursor_settings_page',         
+        'dashicons-admin-generic',      
+        30                              
     );
 }
 add_action('admin_menu', 'cursorMenu');
 
+// function asyginHtml() {
+//     wp_register_script(
+//         'asy-html',  
+//         plugins_url( 'html/menu.php', __FILE__),   
+//     );
 
-
-// function asyginScript(){
-//     wp_enqueue_script('asy-js', plugin_dir_url(__FILE__) . 'scripts/ascrypt.js', array(), null, true);
+//     wp_enqueue_script('asy-html');
 // }
 
+// add_action('wp_enqueue_scripts', 'asyginHtml');
 
-// add_action('wp_enqueue_scripts', 'asyginScript');
 
-// function asyginStyle() {
-//     wp_enqueue_style('asygin-css', plugin_dir_url(__FILE__) . 'styles/asyliah.css');
-// }
+function asygin_enqueue_assets() {
+    if ( ! is_admin() ) {
+        wp_register_style(
+            'asygin-css',
+            plugins_url( 'styles/asyliah.css', __FILE__ )
+        );
+        wp_enqueue_style( 'asygin-css' );
 
-// function asyginScript() {
-//     wp_enqueue_script('asy-js', plugin_dir_url(__FILE__) . 'scripts/ascrypt.js', array('jquery'), null, true);
-// }
+        wp_register_script(
+            'asy-js',
+            plugins_url( 'scripts/ascrypt.js', __FILE__ ),
+            array(),
+            false,
+            true // Charge le script dans le footer
+        );
+        wp_enqueue_script( 'asy-js' );
+    }
+}
+add_action( 'wp_enqueue_scripts', 'asygin_enqueue_assets' );
 
-// add_action('wp_enqueue_scripts', 'asyginStyle', 20); // Priorité ajustée
-// add_action('wp_enqueue_scripts', 'asyginScript', 20); // Priorité ajustée
+// function getMenuRender() 
+// {
+//    
 
-?>
-
-<form method="GET" action="">
+function asygin_menu_render() {
+    ?>
+    <form method="GET" action=""></form>
     <div class="menu-burger-container">
         <!-- Icône du menu burger -->
         <div id="burgerIcon" class="burger-icon">
@@ -67,26 +80,33 @@ add_action('admin_menu', 'cursorMenu');
             <div></div>
         </div>
         <!-- Menu burger contenant les options de curseur -->
-        <div id="burgerMenu" class="burger-menu">
+        <div id="burgerMenu" class="burger-menu cursor-kirby-pointer">
             <ul>
                 <li data-cursor="cursor1">
-                    <img src="wp-content/plugins/asygin/images/amongustwerk.cur" alt="Among Us Twerk">Among Us Twerk
+                    <img src="<?php echo plugins_url('images/amongustwerk.cur', __FILE__); ?>" alt="Among Us Twerk">Among Us Twerk
                 </li>
                 <li data-cursor="cursor2">
-                    <img src="wp-content/plugins/asygin/images/jotaro.cur" alt="Jotaro">Jotaro
+                    <img src="<?php echo plugins_url('images/jotaro.cur', __FILE__); ?>" alt="Jotaro">Jotaro
                 </li>
                 <li data-cursor="cursor3">
-                    <img src="wp-content/plugins/asygin/images/drag.cur" alt="Dragon">Dragon
+                    <img src="<?php echo plugins_url('images/drag.cur', __FILE__); ?>" alt="Dragon">Dragon
                 </li>
                 <li data-cursor="cursor4">
-                    <img src="wp-content/plugins/asygin/images/kirbyc.cur" alt="Kirby">Kirby
+                    <img src="<?php echo plugins_url('images/kirbyc.cur', __FILE__); ?>" alt="Kirby">Kirby
                 </li>
                 <li data-cursor="defaultcursor">
-                    <img src="wp-content/plugins/asygin/images/cursor.cur" alt="Default">Default
+                    <img src="<?php echo plugins_url('images/cursor.cur', __FILE__); ?>" alt="Default">Default
                 </li>
             </ul>
         </div>
     </div>
-</form>
+    <?php
+}
 
-
+// Ajouter le menu burger au footer des pages publiques
+function asygin_enqueue_menu() {
+    if ( ! is_admin() ) {
+        add_action( 'wp_footer', 'asygin_menu_render' );
+    }
+}
+add_action( 'init', 'asygin_enqueue_menu' );

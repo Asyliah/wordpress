@@ -1,33 +1,32 @@
-<style>
+/* <style> */
 .cursor-amongus {
-    cursor: url('wp-content/plugins/asygin/images/amongustwerk.cur'), auto;
+    cursor: url('../images/amongustwerk.cur'), auto;
 }
 
 .cursor-jotaro {
-    cursor: url('wp-content/plugins/asygin/images/jotaro.cur'), auto;
+    cursor: url('../images/jotaro.cur'), auto;
 }
-
 .cursor-dragon {
-    cursor: url('wp-content/plugins/asygin/images/drag.cur'), auto;
+    cursor: url('../images/drag.cur'), auto;
 }
 .cursor-kirby {
-    cursor: url('wp-content/plugins/asygin/images/kirbyc.cur'), auto;
+    cursor: url('../images/kirbyc.cur'), auto;
 }
 
 .cursor-amongus-pointer {
-    cursor: url('wp-content/plugins/asygin/images/amongustwerk-pointer.cur'), pointer;
+    cursor: url('../images/cat.cur'), pointer;
 }
 
 .cursor-jotaro-pointer {
-    cursor: url('wp-content/plugins/asygin/images/jotaro-pointer.cur'), pointer;
+    cursor: url('../images/cat.cur'), pointer;
 }
 
 .cursor-dragon-pointer {
-    cursor: url('wp-content/plugins/asygin/images/drag-pointer.cur'), pointer;
+    cursor: url('../images/cat.cur'), pointer;
 }
 
 .cursor-kirby-pointer {
-    cursor: url('wp-content/plugins/asygin/images/kirbyp.cur'), pointer;
+    cursor: url('../images/kirbyp.cur'), pointer;
 }
 
 /* Style du menu burger */
@@ -44,7 +43,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* margin-top: 30px; */
+    margin-top: 30px; 
 }
 
 .burger-icon div {
@@ -100,4 +99,4 @@
     color: white;
     cursor: pointer;
 }
-</style>
+/* </style> */
